@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: The Ultimate Guide to Blue-Chip Stocks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Brilliant Blues -->
+    <!-- Application Structure Plan: A single-page, top-to-bottom scrolling narrative. The structure guides the user logically from foundational concepts to actionable information. It starts with a "What is it?" hook, followed by "Core Characteristics" (icon cards), "Why Invest?" (donut charts), a "Stock Showdown" (bar chart), "Meet the Players" (company logos), and finally "How to Invest" (HTML/CSS flowchart). This narrative flow makes complex financial information digestible and engaging for a beginner audience. -->
+    <!-- Visualization & Content Choices: 
+        - Data Point: Market Cap threshold -> Goal: Inform -> Viz: Big Number -> Justification: High-impact intro to establish scale. -> Method: HTML.
+        - Data Point: Core Characteristics (stability, dividends, etc.) -> Goal: Organize -> Viz: Icon-based cards -> Justification: Visually breaks down attributes for easy scanning. -> Method: HTML/CSS with Unicode icons.
+        - Data Point: Portfolio Role (Capital Preservation, Income) -> Goal: Inform -> Viz: Donut Charts -> Justification: Visually represents abstract concepts like "stability" as a major component of value. -> Library: Chart.js.
+        - Data Point: Comparison of Stock Types -> Goal: Compare -> Viz: Bar Chart -> Justification: Provides a clear, direct visual comparison of key metrics (Risk, Growth) across different stock types. -> Library: Chart.js.
+        - Data Point: Investment Paths (Direct vs. Funds) -> Goal: Organize -> Viz: HTML Flowchart -> Justification: Clearly illustrates the two main decision paths for an investor without using prohibited libraries. -> Method: HTML/CSS with Tailwind.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #003F5C;
+            color: #FFFFFF;
+        }
+        .text-accent { color: #FFA600; }
+        .bg-card { background-color: #2F4B7C; }
+        .bg-card-light { background-color: #48608f; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <header class="text-center py-16 md:py-24">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">THE ANATOMY OF A <span class="text-accent">BLUE-CHIP</span> STOCK</h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-blue-200">A visual guide to understanding the giants of the U.S. stock market.</p>
+        </header>
+
+        <main>
+            <section class="py-12">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold">What makes a stock "Blue Chip"?</h2>
+                    <p class="mt-3 text-lg text-blue-200">The term comes from poker, where blue chips have the highest value. In investing, it means a company is a recognized, well-established, and financially sound leader. While there's no official list, they share key traits, starting with size.</p>
+                    <div class="mt-8 bg-card rounded-xl p-8 shadow-2xl">
+                        <p class="text-2xl font-bold text-blue-200">Typical Market Capitalization</p>
+                        <p class="text-7xl lg:text-8xl font-extrabold text-accent mt-2">$10 Billion+</p>
+                        <p class="mt-4 text-blue-300">Many blue chips are valued at over $100 billion, placing them among the largest public companies in the world.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 md:py-24">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold">The Core DNA of a Blue Chip</h2>
+                    <p class="mt-3 text-lg text-blue-200 max-w-3xl mx-auto">Beyond size, blue chips are defined by a powerful combination of stability, reputation, and financial strength.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-card rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <p class="text-4xl">👑</p>
+                        <h3 class="text-xl font-bold mt-4">Industry Leadership</h3>
+                        <p class="mt-2 text-blue-300">Often the #1 or #2 player in their sector with a dominant market share and a brand that's a household name.</p>
+                    </div>
+                    <div class="bg-card rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <p class="text-4xl">🏛️</p>
+                        <h3 class="text-xl font-bold mt-4">Financial Fortitude</h3>
+                        <p class="mt-2 text-blue-300">Known for rock-solid balance sheets, consistent and dependable earnings, and low levels of debt.</p>
+                    </div>
+                    <div class="bg-card rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <p class="text-4xl">💵</p>
+                        <h3 class="text-xl font-bold mt-4">Reliable Dividends</h3>
+                        <p class="mt-2 text-blue-300">A long, proven history of paying a portion of profits back to shareholders, providing a steady income stream.</p>
+                    </div>
+                     <div class="bg-card rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <p class="text-4xl">⏳</p>
+                        <h3 class="text-xl font-bold mt-4">Proven Longevity</h3>
+                        <p class="mt-2 text-blue-300">Have successfully operated for decades, weathering numerous economic storms and market cycles.</p>
+                    </div>
+                     <div class="bg-card rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <p class="text-4xl">📈</p>
+                        <h3 class="text-xl font-bold mt-4">Index Mainstays</h3>
+                        <p class="mt-2 text-blue-300">Typically included in major market indexes like the S&P 500 and the Dow Jones Industrial Average.</p>
+                    </div>
+                     <div class="bg-card rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <p class="text-4xl">🌎</p>
+                        <h3 class="text-xl font-bold mt-4">Global Footprint</h3>
+                        <p class="mt-2 text-blue-300">Operate internationally, which diversifies their revenue and reduces dependency on any single economy.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-16 md:py-24">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold">Why Do Investors Choose Blue Chips?</h2>
+                    <p class="mt-3 text-lg text-blue-200 max-w-3xl mx-auto">Investors turn to blue chips for specific strategic advantages in their portfolios, primarily focusing on stability and income.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center">
+                        <div class="chart-container">
+                            <canvas id="stabilityChart"></canvas>
+                        </div>
+                        <h3 class="text-xl font-bold mt-6">A Foundation of Stability</h3>
+                        <p class="mt-2 text-blue-200 max-w-md mx-auto">Their resilience makes them a core holding for capital preservation. They tend to be less volatile during market downturns, acting as a defensive anchor in a diversified portfolio.</p>
+                    </div>
+                    <div class="text-center">
+                         <div class="chart-container">
+                            <canvas id="incomeChart"></canvas>
+                        </div>
+                        <h3 class="text-xl font-bold mt-6">A Reliable Source of Income</h3>
+                        <p class="mt-2 text-blue-200 max-w-md mx-auto">The consistent payment of dividends provides a dependable cash flow, which is especially valuable for retirees or anyone seeking regular income from their investments.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 md:py-24">
+                 <div class="text-center">
+                    <h2 class="text-3xl font-bold">Stock Showdown: Blue Chips vs. The Field</h2>
+                    <p class="mt-3 text-lg text-blue-200 max-w-3xl mx-auto">How do blue chips compare to other popular stock types? This chart breaks down the typical risk and growth profiles.</p>
+                </div>
+                <div class="mt-12 bg-card rounded-xl p-6 md:p-8">
+                     <div class="chart-container h-96 md:h-[500px] max-h-[500px]">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                    <div class="mt-6 text-center text-blue-200">
+                        <p>This chart visualizes the fundamental trade-off: Blue chips exchange the explosive growth potential of Growth or Small-Cap stocks for significantly lower risk and higher financial stability. Their established nature provides a defensive quality that is absent in more speculative investments.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 md:py-24">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold">Meet the Players: Examples of US Blue Chips</h2>
+                    <p class="mt-3 text-lg text-blue-200 max-w-3xl mx-auto">These household names from diverse sectors are perfect examples of what it means to be a blue-chip company.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Microsoft</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Apple</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">JPMorgan Chase</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Walmart</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Johnson & Johnson</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Coca-Cola</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Amazon</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Procter & Gamble</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Alphabet</span></div>
+                    <div class="text-center p-4 bg-card-light rounded-lg h-full flex items-center justify-center"><span class="font-bold text-xl">Eli Lilly</span></div>
+                </div>
+            </section>
+
+            <section class="py-16 md:py-24">
+                 <div class="text-center">
+                    <h2 class="text-3xl font-bold">Your Path to Investing in Blue Chips</h2>
+                    <p class="mt-3 text-lg text-blue-200 max-w-3xl mx-auto">There are two primary ways to add blue-chip stocks to your portfolio, each with its own pros and cons.</p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row gap-8 items-stretch">
+                        <div class="flex-1 bg-card rounded-xl p-8 border-2 border-transparent hover:border-accent transition-all">
+                             <h3 class="text-2xl font-bold text-center text-accent">PATH 1: DIRECT STOCKS</h3>
+                             <div class="mt-6 text-center">You research and buy shares of individual companies through a brokerage account.</div>
+                             <div class="mt-6">
+                                 <p class="font-bold text-green-400">+ PROS:</p>
+                                 <ul class="list-disc list-inside text-blue-200 mt-2">
+                                     <li>Complete control over which companies you own.</li>
+                                     <li>No management fees.</li>
+                                 </ul>
+                             </div>
+                             <div class="mt-4">
+                                 <p class="font-bold text-red-400">- CONS:</p>
+                                 <ul class="list-disc list-inside text-blue-200 mt-2">
+                                     <li>Requires significant time and research.</li>
+                                     <li>Harder to achieve diversification.</li>
+                                 </ul>
+                             </div>
+                        </div>
+
+                        <div class="flex items-center justify-center text-2xl font-bold text-accent">OR</div>
+
+                        <div class="flex-1 bg-card rounded-xl p-8 border-2 border-transparent hover:border-accent transition-all">
+                            <h3 class="text-2xl font-bold text-center text-accent">PATH 2: FUNDS / ETFs</h3>
+                            <div class="mt-6 text-center">You buy shares of a fund that holds a basket of many blue-chip stocks (e.g., an S&P 500 ETF).</div>
+                            <div class="mt-6">
+                                <p class="font-bold text-green-400">+ PROS:</p>
+                                <ul class="list-disc list-inside text-blue-200 mt-2">
+                                    <li>Instant diversification across many companies.</li>
+                                    <li>Simple and cost-effective.</li>
+                                </ul>
+                            </div>
+                            <div class="mt-4">
+                                 <p class="font-bold text-red-400">- CONS:</p>
+                                 <ul class="list-disc list-inside text-blue-200 mt-2">
+                                     <li>You don't choose the individual stocks.</li>
+                                     <li>May have small management fees.</li>
+                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center py-12 border-t border-blue-800">
+            <p class="text-blue-300">Infographic based on the report "Understanding Blue-Chip Stocks in the United States."</p>
+            <p class="text-sm text-blue-400 mt-2">This content is for informational purposes only and does not constitute financial advice.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const chartColors = {
+                primary: '#FFA600', // accent orange
+                secondary: '#D45087', // magenta
+                tertiary: '#665191', // purple
+                grid: 'rgba(255, 255, 255, 0.1)',
+                text: '#FFFFFF'
+            };
+
+            const defaultTooltipConfig = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const wrapLabel = (label) => {
+                if (label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const stabilityCtx = document.getElementById('stabilityChart')?.getContext('2d');
+            if (stabilityCtx) {
+                new Chart(stabilityCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Stability & Preservation', 'Other Factors'],
+                        datasets: [{
+                            data: [75, 25],
+                            backgroundColor: [chartColors.primary, chartColors.tertiary],
+                            borderColor: '#2F4B7C',
+                            borderWidth: 4,
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                            legend: { display: false },
+                             tooltip: defaultTooltipConfig.plugins.tooltip
+                        }
+                    }
+                });
+            }
+
+            const incomeCtx = document.getElementById('incomeChart')?.getContext('2d');
+            if (incomeCtx) {
+                new Chart(incomeCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Reliable Income (Dividends)', 'Growth Component'],
+                        datasets: [{
+                            data: [65, 35],
+                            backgroundColor: [chartColors.secondary, chartColors.tertiary],
+                             borderColor: '#2F4B7C',
+                            borderWidth: 4,
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                           legend: { display: false },
+                           tooltip: defaultTooltipConfig.plugins.tooltip
+                        }
+                    }
+                });
+            }
+
+            const comparisonCtx = document.getElementById('comparisonChart')?.getContext('2d');
+            if (comparisonCtx) {
+                new Chart(comparisonCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: [wrapLabel('Potential Growth'), wrapLabel('Volatility / Risk'), wrapLabel('Dividend Reliability')],
+                        datasets: [
+                            {
+                                label: 'Blue-Chip Stocks',
+                                data: [5, 3, 9],
+                                backgroundColor: chartColors.primary,
+                                borderRadius: 4
+                            },
+                            {
+                                label: 'Growth Stocks',
+                                data: [9, 8, 2],
+                                backgroundColor: chartColors.secondary,
+                                borderRadius: 4
+                            },
+                             {
+                                label: 'Small-Cap Stocks',
+                                data: [10, 10, 1],
+                                backgroundColor: chartColors.tertiary,
+                                borderRadius: 4
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: chartColors.grid },
+                                ticks: { color: chartColors.text, font: { size: 14 } }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { color: chartColors.text, font: { size: 14 } }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: { color: chartColors.text, font: { size: 14 } }
+                            },
+                           tooltip: defaultTooltipConfig.plugins.tooltip
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
